@@ -11,7 +11,7 @@ const companyLinks = [
 
 const supportLinks = [
   { label: "Contact", href: "#contact" },
-  { label: "Get A Quote", href: "tel:+639350396218" },
+  { label: "Get A Quote", href: "#contact" },
   { label: "Brands", href: "#contact" },
   { label: "Clients", href: "#clients" },
   { label: "Why Choose Us", href: "#why-us" },
