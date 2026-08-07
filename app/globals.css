@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #ffffff;
+  --bg-darker: #f5f5f5;
+  --bg-dark: #ececec;
+  --bg-darkest: #0d1c2e;
+  --card: #ffffff;
+  --card-soft: #f5f5f5;
+  --accent: #ea580c;
+  --accent-2: #f97316;
+  --gold: #ffd000;
+  --gold-deep: #e6a800;
+  --red: #e23b2b;
+  --red-dark: #c0260f;
+  --green: #048404;
+  --navy: #0a2540;
+  --navy-2: #0d1c2e;
+  --text-light: #ffffff;
+  --text-dark: #1a1a1a;
+  --muted: #6b6b6b;
+  --muted-2: #595959;
+  --muted-dark: #3d3d3d;
+  --muted-faint: #999999;
+  --hairline: rgba(0, 0, 0, 0.12);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-darker: var(--bg-darker);
+  --color-bg-dark: var(--bg-dark);
+  --color-bg-darkest: var(--bg-darkest);
+  --color-card: var(--card);
+  --color-card-soft: var(--card-soft);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --color-gold: var(--gold);
+  --color-gold-deep: var(--gold-deep);
+  --color-red: var(--red);
+  --color-red-dark: var(--red-dark);
+  --color-green: var(--green);
+  --color-navy: var(--navy);
+  --color-navy-2: var(--navy-2);
+  --color-ink: var(--text-dark);
+  --color-muted: var(--muted);
+  --color-muted-2: var(--muted-2);
+  --color-muted-dark: var(--muted-dark);
+  --color-muted-faint: var(--muted-faint);
+  --color-soft: var(--card-soft);
+  --color-hairline: var(--hairline);
+  --font-sans: var(--font-barlow), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-archivo), var(--font-barlow), ui-sans-serif,
+    system-ui, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text-dark);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* section kicker: label + rule */
+.label-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+}
+.label-kicker::before {
+  content: "";
+  width: 22px;
+  height: 2px;
+  background: var(--gold-deep);
+}
+.label-kicker.light {
+  color: #ffffff;
+}
+.label-kicker.light::before {
+  background: #ffffff;
+}
+
+/* design.md: diagonal accents */
+.bg-diagonal-orange {
+  background: linear-gradient(
+    135deg,
+    var(--gold) 0%,
+    var(--gold) 48%,
+    var(--bg) 49%,
+    var(--bg) 100%
+  );
+}
+.bg-diagonal-darktop {
+  background: linear-gradient(
+    168deg,
+    var(--gold) 0px,
+    var(--gold) 140px,
+    var(--bg) 141px,
+    var(--bg) 100%
+  );
+}
+
+/* footer hairline */
+.hairline-top {
+  border-top: 1px solid var(--hairline);
+}
