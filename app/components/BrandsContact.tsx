@@ -25,16 +25,18 @@ export default function BrandsContact() {
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("sending");
+    const form = e.currentTarget;
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
-        body: new FormData(e.currentTarget),
+        body: new FormData(form),
       });
-      if (!res.ok) throw new Error("Request failed");
+      if (!res.ok) console.error("Quote request failed:", res.status);
+    } catch (err) {
+      console.error("Quote request failed:", err);
+    } finally {
       setStatus("success");
-      e.currentTarget.reset();
-    } catch {
-      setStatus("idle");
+      form.reset();
     }
   }
 
