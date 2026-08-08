@@ -1,13 +1,5 @@
 import Image from "next/image";
 import { company, heroFeatures } from "@/app/data";
-import { BoltIcon, GearIcon, PumpIcon, WrenchIcon } from "./icons";
-
-const categoryIcons: Record<string, typeof WrenchIcon> = {
-  wrench: WrenchIcon,
-  bolt: BoltIcon,
-  pump: PumpIcon,
-  gear: GearIcon,
-};
 
 export default function Hero() {
   return (
@@ -26,7 +18,7 @@ export default function Hero() {
           <div className="max-w-[620px] bg-bg p-6 sm:p-8 lg:max-w-[580px] lg:p-10">
             <span className="label-kicker">Est. 2020 · Quezon City</span>
             <h1 className="mt-4 font-heading text-3xl font-extrabold uppercase leading-none text-ink sm:text-4xl lg:text-5xl">
-              Zed&apos;s Tools Depot
+              Zed&apos;s Industrial Builders Corporation
               <span className="mt-3 block text-lg font-bold uppercase tracking-wide text-accent-2 sm:text-xl">
                 Hardware Tools &amp; Equipment Trading
               </span>
@@ -56,22 +48,16 @@ export default function Hero() {
 
       <div className="mx-auto max-w-7xl px-6">
         <div className="mt-16 grid grid-cols-2 gap-px border border-hairline bg-hairline lg:grid-cols-4">
-          {heroFeatures.map((f) => {
-            const Icon = categoryIcons[f.icon] ?? WrenchIcon;
-            return (
-              <div key={f.title} className="flex items-center gap-4 bg-bg px-6 py-6">
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center bg-gold/15 text-gold-deep">
-                  <Icon className="h-6 w-6" />
-                </span>
-                <div>
-                  <h3 className="font-heading text-sm font-bold uppercase tracking-wide text-ink">
-                    {f.title}
-                  </h3>
-                  <p className="mt-1 text-xs leading-5 text-muted">{f.desc}</p>
-                </div>
+          {heroFeatures.map((f) => (
+            <div key={f.title} className="flex items-center gap-4 bg-bg px-6 py-6">
+              <div>
+                <h3 className="font-heading text-sm font-bold uppercase tracking-wide text-ink">
+                  {f.title}
+                </h3>
+                <p className="mt-1 text-xs leading-5 text-muted">{f.desc}</p>
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
       </div>
 

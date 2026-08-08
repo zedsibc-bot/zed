@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { company } from "@/app/data";
 import {
   CloseIcon,
@@ -15,9 +16,6 @@ const links = [
   { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
   { label: "Products", href: "#products" },
-  { label: "Why Us", href: "#why-us" },
-  { label: "Clients", href: "#clients" },
-  { label: "Gallery", href: "#gallery" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -134,11 +132,20 @@ export default function Navbar() {
         <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-6 px-6">
           <a
             href="#home"
-            className="flex items-center font-heading text-xl font-bold text-ink"
+            className="flex items-center gap-2.5 font-heading text-xl font-bold text-ink"
           >
+            <span className="relative block h-10 w-10 shrink-0">
+              <Image
+                src="/logo/logo.jpg"
+                alt="Zed's Industrial Builders Corporation"
+                fill
+                sizes="40px"
+                className="object-contain"
+              />
+            </span>
             <span>
-              Zed&apos;s <span className="text-accent-2">Tools</span>{" "}
-              <span className="hidden sm:inline">Depot</span>
+              Zed&apos;s <span className="text-accent-2">Industrial</span>{" "}
+              <span className="hidden sm:inline">Builders Corporation</span>
             </span>
           </a>
 

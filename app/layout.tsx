@@ -15,9 +15,9 @@ const archivo = Archivo({
 });
 
 export const metadata: Metadata = {
-  title: "Zed's Tools Depot | Hardware Tools & Equipment Trading",
+  title: "Zed's Industrial Builders Corporation | Hardware Tools & Equipment Trading",
   description:
-    "Zed's Tools Depot is a hardware tools and equipment trading company in Quezon City, Philippines. Authorized importer and supplier of construction and industrial supplies since 2020.",
+    "Zed's Industrial Builders Corporation is a hardware tools and equipment trading company in Quezon City, Philippines. Authorized importer and supplier of construction and industrial supplies since 2020.",
   keywords: [
     "hardware",
     "tools",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     "electrical supplies",
   ],
   openGraph: {
-    title: "Zed's Tools Depot",
+    title: "Zed's Industrial Builders Corporation",
     description:
       "Hardware tools and equipment trading. Authorized importer & supplier of construction and industrial supplies.",
     type: "website",

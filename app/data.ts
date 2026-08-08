@@ -1,7 +1,7 @@
 export const company = {
-  name: "Zed's Tools Depot",
+  name: "Zed's Industrial Builders Corporation",
   shortName: "Zed's",
-  fullName: "Zed's Tools Depot Hardware Tools and Equipment Trading",
+  fullName: "Zed's Industrial Builders Corporation",
   tagline: "Hardware Tools & Equipment Trading",
   phoneDisplay: "0935 039 6218",
   phoneIntl: "+63 935 039 6218",
@@ -15,22 +15,18 @@ export const company = {
 
 export const heroFeatures = [
   {
-    icon: "wrench",
     title: "Power & Hand Tools",
     desc: "Drills, grinders, rotary hammers, cut-off saws and more.",
   },
   {
-    icon: "bolt",
     title: "Electrical Supplies",
     desc: "Wires, cables, breakers, lighting, panel boards & AVRs.",
   },
   {
-    icon: "pump",
     title: "Pumps & Motors",
     desc: "Submersible, jet, centrifugal pumps, generators & engines.",
   },
   {
-    icon: "gear",
     title: "Industrial & Welding",
     desc: "Electrodes, consumables, pipe fittings and fabrication.",
   },
@@ -336,7 +332,7 @@ export const certifications = [
 ];
 
 export const gallery = [
-  { src: "/assets/pdf/pg-15-01.png", alt: "Zed's Tools Depot physical store", big: false },
+  { src: "/assets/pdf/pg-15-01.png", alt: "Zed's Industrial Builders Corporation physical store", big: false },
   { src: "/assets/pdf/pg-15-02.png", alt: "Hardware store front display", big: true },
   { src: "/assets/pdf/pg-15-03.png", alt: "Store tools display", big: false },
   { src: "/assets/pdf/pg-16-01.png", alt: "Inside the store, shelves", big: false },

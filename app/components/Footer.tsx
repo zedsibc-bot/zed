@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { company } from "@/app/data";
 import { MailIcon, PhoneIcon } from "./icons";
 
@@ -22,8 +23,23 @@ export default function Footer() {
     <footer className="bg-bg">
       <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 md:grid-cols-3">
         <div>
-          <a href="#home" className="font-heading text-xl font-bold text-ink">
-            Zed&apos;s <span className="text-accent-2">Tools</span> Depot
+          <a
+            href="#home"
+            className="flex items-center gap-2.5 font-heading text-xl font-bold text-ink"
+          >
+            <span className="relative block h-10 w-10 shrink-0">
+              <Image
+                src="/logo/logo.jpg"
+                alt="Zed's Industrial Builders Corporation"
+                fill
+                sizes="40px"
+                className="object-contain"
+              />
+            </span>
+            <span>
+              Zed&apos;s <span className="text-accent-2">Industrial</span> Builders
+              Corporation
+            </span>
           </a>
           <p className="mt-5 text-sm leading-6 text-muted-2">
             Hardware tools and equipment trading. High-standard construction
@@ -86,7 +102,7 @@ export default function Footer() {
 
       <div className="hairline-top">
         <p className="mx-auto max-w-7xl px-6 py-6 text-center text-xs text-muted-faint">
-          © 2026 Zed&apos;s Tools Depot. All rights reserved.
+          © 2026 Zed&apos;s Industrial Builders Corporation. All rights reserved.
         </p>
       </div>
     </footer>

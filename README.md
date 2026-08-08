@@ -25,13 +25,15 @@ Setup (one-time, in your browser):
 
 1. **Create the sheet** — new Google Sheet with a first sheet whose header row is:
    `Fullname | Company Name | Address | Contact Number | TIN Number | Item Number | Brand / Model | Description | Quantity | Unit`
-2. **Add the script** — in the sheet: Extensions -> Apps Script. Paste the contents of [`scripts/appsscript/Code.gs`](scripts/appsscript/Code.gs), set the `SHEET_ID` constant to your spreadsheet's ID (the part in the URL between `/d/` and `/edit`), and save.
+2. **Add the script** — in the sheet: Extensions -> Apps Script. Paste the contents of [`scripts/appsscript/Code.gs`](scripts/appsscript/Code.gs), set the `SHEET_ID` constant to your spreadsheet's ID (the part in the URL between `/d/` and `/edit`), and save. If you re-paste the script after an update, **re-deploy the web app** (the URL stays the same).
 3. **Deploy as web app** — Deploy -> New deployment -> Type: Web app -> Execute as: *Me* -> Who has access: *Anyone* -> Deploy. Copy the **Web app URL**.
 4. **Configure the app** — create `.env.local` at the repo root:
    ```bash
    GOOGLE_SHEETS_WEBHOOK_URL=https://script.google.com/macros/s/.../exec
    ```
 5. Restart `npm run dev` (env changes require a restart) and submit the form to confirm a row appears in the sheet.
+
+The form supports quoting multiple items in one submission; each item is written as **one row** in the sheet (contact details repeated on each row). Quantity defaults to 1 and is required per item.
 
 ## Getting Started
 

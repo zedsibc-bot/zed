@@ -10,7 +10,7 @@ export default function WhyChooseUs() {
             <div className="border border-hairline bg-bg-darker p-3">
               <Image
                 src={whyImage}
-                alt="Zed's Tools Depot, Quezon City"
+                alt="Zed's Industrial Builders Corporation, Quezon City"
                 width={1296}
                 height={864}
                 quality={85}

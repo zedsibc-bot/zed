@@ -17,19 +17,63 @@ const units = [
   "dozen",
 ];
 
+type Item = {
+  itemNumber: string;
+  brandModel: string;
+  description: string;
+  quantity: string;
+  unit: string;
+};
+
+function initialItem(): Item {
+  return {
+    itemNumber: "",
+    brandModel: "",
+    description: "",
+    quantity: "1",
+    unit: "",
+  };
+}
+
+const inputClass =
+  "mt-2 w-full border border-hairline bg-bg min-h-12 px-4 py-3 text-sm text-ink placeholder:text-muted-faint focus:border-gold-deep focus:outline-none focus:ring-2 focus:ring-gold-deep/30";
+
 export default function BrandsContact() {
   const [status, setStatus] = useState<"idle" | "sending" | "success">(
     "idle"
   );
+  const [items, setItems] = useState<Item[]>(() => [initialItem()]);
+
+  function updateItem(index: number, field: keyof Item, value: string) {
+    setItems((prev) =>
+      prev.map((item, i) => (i === index ? { ...item, [field]: value } : item))
+    );
+  }
+
+  function addItem() {
+    setItems((prev) => [...prev, initialItem()]);
+  }
+
+  function removeItem(index: number) {
+    setItems((prev) => prev.filter((_, i) => i !== index));
+  }
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("sending");
     const form = e.currentTarget;
+    const formData = new FormData(form);
+    items.forEach((item) => {
+      formData.append("Item Number", item.itemNumber.trim());
+      formData.append("Brand / Model", item.brandModel.trim());
+      formData.append("Description", item.description.trim());
+      formData.append("Quantity", item.quantity.trim());
+      formData.append("Unit", item.unit.trim());
+    });
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
-        body: new FormData(form),
+        body: formData,
       });
       if (!res.ok) console.error("Quote request failed:", res.status);
     } catch (err) {
@@ -37,6 +81,7 @@ export default function BrandsContact() {
     } finally {
       setStatus("success");
       form.reset();
+      setItems([initialItem()]);
     }
   }
 
@@ -228,88 +273,138 @@ export default function BrandsContact() {
                     suppressHydrationWarning
                 />
               </div>
-              <div>
-                <label
-                  htmlFor="itemNumber"
-                  className="font-heading text-xs font-bold uppercase tracking-wide text-ink"
-                >
-                  Item Number
-                </label>
-                <input
-                  id="itemNumber"
-                  name="Item Number"
-                  type="text"
-                  placeholder="Item / part number"
-                  className="mt-2 w-full border border-hairline bg-bg min-h-12 px-4 py-3 text-sm text-ink placeholder:text-muted-faint focus:border-gold-deep focus:outline-none focus:ring-2 focus:ring-gold-deep/30"
-                    suppressHydrationWarning
-                />
+              <div className="sm:col-span-2 space-y-4">
+                {items.map((item, index) => (
+                  <div
+                    key={index}
+                    className="border border-hairline bg-bg-darker p-4 sm:p-5"
+                  >
+                    <div className="flex items-center justify-between">
+                      <p className="font-heading text-xs font-bold uppercase tracking-[0.2em] text-gold-deep">
+                        Item {index + 1}
+                      </p>
+                      <button
+                        type="button"
+                        onClick={() => removeItem(index)}
+                        disabled={items.length === 1 || status === "sending"}
+                        className="text-sm font-semibold text-muted-2 transition-colors hover:text-gold-deep disabled:cursor-not-allowed disabled:opacity-50"
+                      >
+                        Remove
+                      </button>
+                    </div>
+                    <div className="mt-4 grid gap-5 sm:grid-cols-2">
+                      <div>
+                        <label
+                          htmlFor={`itemNumber-${index}`}
+                          className="font-heading text-xs font-bold uppercase tracking-wide text-ink"
+                        >
+                          Item Number
+                        </label>
+                        <input
+                          id={`itemNumber-${index}`}
+                          type="text"
+                          value={item.itemNumber}
+                          onChange={(e) =>
+                            updateItem(index, "itemNumber", e.target.value)
+                          }
+                          placeholder="Item / part number"
+                          className={inputClass}
+                          suppressHydrationWarning
+                        />
+                      </div>
+                      <div>
+                        <label
+                          htmlFor={`brandModel-${index}`}
+                          className="font-heading text-xs font-bold uppercase tracking-wide text-ink"
+                        >
+                          Brand / Model
+                        </label>
+                        <input
+                          id={`brandModel-${index}`}
+                          type="text"
+                          value={item.brandModel}
+                          onChange={(e) =>
+                            updateItem(index, "brandModel", e.target.value)
+                          }
+                          placeholder="Brand and model"
+                          className={inputClass}
+                          suppressHydrationWarning
+                        />
+                      </div>
+                      <div className="sm:col-span-2">
+                        <label
+                          htmlFor={`description-${index}`}
+                          className="font-heading text-xs font-bold uppercase tracking-wide text-ink"
+                        >
+                          Description
+                        </label>
+                        <textarea
+                          id={`description-${index}`}
+                          rows={3}
+                          required
+                          value={item.description}
+                          onChange={(e) =>
+                            updateItem(index, "description", e.target.value)
+                          }
+                          placeholder="Describe the item you need"
+                          className={inputClass}
+                          suppressHydrationWarning
+                        />
+                      </div>
+                      <div>
+                        <label
+                          htmlFor={`quantity-${index}`}
+                          className="font-heading text-xs font-bold uppercase tracking-wide text-ink"
+                        >
+                          Quantity
+                        </label>
+                        <input
+                          id={`quantity-${index}`}
+                          type="number"
+                          min="1"
+                          required
+                          value={item.quantity}
+                          onChange={(e) =>
+                            updateItem(index, "quantity", e.target.value)
+                          }
+                          className={inputClass}
+                          suppressHydrationWarning
+                        />
+                      </div>
+                      <div>
+                        <label
+                          htmlFor={`unit-${index}`}
+                          className="font-heading text-xs font-bold uppercase tracking-wide text-ink"
+                        >
+                          Unit
+                        </label>
+                        <input
+                          id={`unit-${index}`}
+                          type="text"
+                          list="unit-options"
+                          value={item.unit}
+                          onChange={(e) =>
+                            updateItem(index, "unit", e.target.value)
+                          }
+                          placeholder="Select or type a unit"
+                          className={inputClass}
+                          suppressHydrationWarning
+                        />
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
-              <div>
-                <label
-                  htmlFor="brandModel"
-                  className="font-heading text-xs font-bold uppercase tracking-wide text-ink"
-                >
-                  Brand / Model
-                </label>
-                <input
-                  id="brandModel"
-                  name="Brand / Model"
-                  type="text"
-                  placeholder="Brand and model"
-                  className="mt-2 w-full border border-hairline bg-bg min-h-12 px-4 py-3 text-sm text-ink placeholder:text-muted-faint focus:border-gold-deep focus:outline-none focus:ring-2 focus:ring-gold-deep/30"
-                    suppressHydrationWarning
-                />
-              </div>
+
               <div className="sm:col-span-2">
-                <label
-                  htmlFor="description"
-                  className="font-heading text-xs font-bold uppercase tracking-wide text-ink"
+                <button
+                  type="button"
+                  onClick={addItem}
+                  disabled={status === "sending"}
+                  className="min-h-12 w-full border border-hairline bg-bg px-8 py-3 text-sm font-bold uppercase tracking-wide text-muted-2 transition-colors hover:border-gold-deep/50 hover:text-gold-deep disabled:cursor-not-allowed disabled:opacity-60"
                 >
-                  Description
-                </label>
-                <textarea
-                  id="description"
-                  name="Description"
-                  rows={4}
-                  required
-                  placeholder="Describe the item you need"
-                  className="mt-2 w-full resize-y border border-hairline bg-bg min-h-12 px-4 py-3 text-sm text-ink placeholder:text-muted-faint focus:border-gold-deep focus:outline-none focus:ring-2 focus:ring-gold-deep/30"
-                    suppressHydrationWarning
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="quantity"
-                  className="font-heading text-xs font-bold uppercase tracking-wide text-ink"
-                >
-                  Quantity
-                </label>
-                <input
-                  id="quantity"
-                  name="Quantity"
-                  type="number"
-                  min="1"
-                  placeholder="1"
-                  className="mt-2 w-full border border-hairline bg-bg min-h-12 px-4 py-3 text-sm text-ink placeholder:text-muted-faint focus:border-gold-deep focus:outline-none focus:ring-2 focus:ring-gold-deep/30"
-                    suppressHydrationWarning
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="unit"
-                  className="font-heading text-xs font-bold uppercase tracking-wide text-ink"
-                >
-                  Unit
-                </label>
-                <input
-                  id="unit"
-                  name="Unit"
-                  type="text"
-                  list="unit-options"
-                  placeholder="Select or type a unit"
-                  className="mt-2 w-full border border-hairline bg-bg min-h-12 px-4 py-3 text-sm text-ink placeholder:text-muted-faint focus:border-gold-deep focus:outline-none focus:ring-2 focus:ring-gold-deep/30"
-                    suppressHydrationWarning
-                />
+                  + Add Item
+                </button>
                 <datalist id="unit-options">
                   {units.map((u) => (
                     <option key={u} value={u} />
