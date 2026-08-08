@@ -332,12 +332,12 @@ export const certifications = [
 ];
 
 export const gallery = [
-  { src: "/assets/pdf/pg-15-01.png", alt: "Zed's Industrial Builders Corporation physical store", big: false },
-  { src: "/assets/pdf/pg-15-02.png", alt: "Hardware store front display", big: true },
-  { src: "/assets/pdf/pg-15-03.png", alt: "Store tools display", big: false },
-  { src: "/assets/pdf/pg-16-01.png", alt: "Inside the store, shelves", big: false },
-  { src: "/assets/pdf/pg-16-02.png", alt: "Inside the store, aisle", big: false },
-  { src: "/assets/pdf/pg-16-03.png", alt: "Store interior, hardware", big: true },
+  { src: "/assets/img/pg-15-01.webp", alt: "Zed's Industrial Builders Corporation physical store", big: false },
+  { src: "/assets/img/pg-15-02.webp", alt: "Hardware store front display", big: true },
+  { src: "/assets/img/pg-15-03.webp", alt: "Store tools display", big: false },
+  { src: "/assets/img/pg-16-01.webp", alt: "Inside the store, shelves", big: false },
+  { src: "/assets/img/pg-16-02.webp", alt: "Inside the store, aisle", big: false },
+  { src: "/assets/img/pg-16-03.webp", alt: "Store interior, hardware", big: true },
 ];
 
-export const whyImage = "/assets/pdf/pg-16-02.png";
+export const whyImage = "/assets/img/pg-16-02.webp";

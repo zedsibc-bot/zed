@@ -42,6 +42,7 @@ export default function BrandsContact() {
   const [status, setStatus] = useState<"idle" | "sending" | "success">(
     "idle"
   );
+  const [error, setError] = useState<string | null>(null);
   const [items, setItems] = useState<Item[]>(() => [initialItem()]);
 
   function updateItem(index: number, field: keyof Item, value: string) {
@@ -61,6 +62,7 @@ export default function BrandsContact() {
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("sending");
+    setError(null);
     const form = e.currentTarget;
     const formData = new FormData(form);
     items.forEach((item) => {
@@ -75,13 +77,19 @@ export default function BrandsContact() {
         method: "POST",
         body: formData,
       });
-      if (!res.ok) console.error("Quote request failed:", res.status);
-    } catch (err) {
-      console.error("Quote request failed:", err);
-    } finally {
+      const body = await res.json().catch(() => null);
+      if (!res.ok) {
+        setError(body?.error ?? "Something went wrong. Please try again.");
+        setStatus("idle");
+        return;
+      }
       setStatus("success");
       form.reset();
       setItems([initialItem()]);
+    } catch (err) {
+      console.error("Quote request failed:", err);
+      setError("Network error. Please try again.");
+      setStatus("idle");
     }
   }
 
@@ -413,6 +421,14 @@ export default function BrandsContact() {
               </div>
 
               <div className="sm:col-span-2">
+                {error && (
+                  <p
+                    role="alert"
+                    className="mb-4 text-sm font-semibold leading-6 text-red"
+                  >
+                    {error}
+                  </p>
+                )}
                 <button
                   type="submit"
                   disabled={status === "sending"}

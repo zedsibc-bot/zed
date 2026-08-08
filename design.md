@@ -154,6 +154,6 @@
 ## 7. Content Sources
 
 - **Copy:** `scripts/company_data.md` (machine-extracted from the PDF).
-- **Photos:** `public/assets/pdf/pg-*` (extracted from the PDF originally).
+- **Photos:** `public/assets/img/pg-*.webp` (re-encoded from PDF-extracted PNGs via `scripts/optimize_photos.py`).
 - **Verification artifact:** `public/assets/thumbs/` full-page snapshots used during build.
 - **Sensitive data:** the PDF is excluded from `public/` (moved to `scripts/`); no TIN, bank accounts, owner name, or certificate scans are rendered. Certifications are text-only badges.

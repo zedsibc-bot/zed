@@ -80,7 +80,6 @@ export default function Navbar() {
   function goTo(href: string) {
     const id = href.slice(1);
     setOpen(false);
-    document.body.style.overflow = "";
     requestAnimationFrame(() => {
       document.getElementById(id)?.scrollIntoView({ block: "start" });
       setActive(id);

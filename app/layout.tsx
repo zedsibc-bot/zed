@@ -1,5 +1,6 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Archivo, Barlow } from "next/font/google";
+import { siteUrl } from "./site";
 import "./globals.css";
 
 const barlow = Barlow({
@@ -15,6 +16,7 @@ const archivo = Archivo({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl()),
   title: "Zed's Industrial Builders Corporation | Hardware Tools & Equipment Trading",
   description:
     "Zed's Industrial Builders Corporation is a hardware tools and equipment trading company in Quezon City, Philippines. Authorized importer and supplier of construction and industrial supplies since 2020.",
@@ -35,6 +37,10 @@ export const metadata: Metadata = {
       "Hardware tools and equipment trading. Authorized importer & supplier of construction and industrial supplies.",
     type: "website",
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#ffd000",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

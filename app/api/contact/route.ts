@@ -73,7 +73,18 @@ export async function POST(request: Request) {
     body: params.toString(),
   });
 
-  if (!res.ok) {
+  // Apps Script returns HTTP 200 even for failures, so check the JSON body.
+  let saved = res.ok;
+  if (saved) {
+    try {
+      const body = await res.json();
+      saved = body?.result === "success";
+    } catch {
+      saved = false;
+    }
+  }
+
+  if (!saved) {
     return Response.json(
       { error: "Failed to save submission." },
       { status: 502 }

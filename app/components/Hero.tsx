@@ -6,7 +6,7 @@ export default function Hero() {
     <section id="home" className="bg-bg">
       <div className="relative overflow-hidden">
         <Image
-          src="/assets/pdf/pg-16-01.png"
+          src="/assets/img/pg-16-01.webp"
           alt=""
           fill
           preload

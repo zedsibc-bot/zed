@@ -62,19 +62,36 @@ function doPost(e) {
 
 // Repeated keys (one set per quoted item) are lost by e.parameter, so parse
 // the raw urlencoded body instead. Falls back to e.parameter if no body.
+// URLSearchParams is not available in the Apps Script runtime, so parse
+// manually. The order of pairs is preserved so getAll() returns items in the
+// same order they were submitted.
 function parseParams(e) {
-  const params = new URLSearchParams();
+  const params = {};
   if (e.postData && e.postData.contents) {
-    new URLSearchParams(e.postData.contents).forEach((value, key) =>
-      params.append(key, value)
-    );
+    e.postData.contents.split("&").forEach((pair) => {
+      if (!pair) return;
+      const idx = pair.indexOf("=");
+      const key = decodeParam(pair.slice(0, idx === -1 ? pair.length : idx));
+      const value = decodeParam(idx === -1 ? "" : pair.slice(idx + 1));
+      (params[key] = params[key] || []).push(value);
+    });
+  } else if (e.parameter) {
+    Object.keys(e.parameter).forEach((key) => {
+      (params[key] = params[key] || []).push(e.parameter[key]);
+    });
   }
-  if (Array.from(params.keys()).length === 0 && e.parameter) {
-    Object.keys(e.parameter).forEach((key) =>
-      params.append(key, e.parameter[key])
-    );
+  return {
+    get: (key) => (params[key] && params[key].length ? params[key][0] : ""),
+    getAll: (key) => params[key] || [],
+  };
+}
+
+function decodeParam(s) {
+  try {
+    return decodeURIComponent(s.replace(/\+/g, " "));
+  } catch (err) {
+    return s;
   }
-  return params;
 }
 
 function success(message) {
