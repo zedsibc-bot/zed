@@ -301,6 +301,7 @@ export default function BrandsContact() {
                       </p>
                       <button
                         type="button"
+                        suppressHydrationWarning
                         onClick={() => removeItem(index)}
                         disabled={items.length === 1 || status === "sending"}
                         className="text-sm font-semibold text-muted-2 transition-colors hover:text-gold-deep disabled:cursor-not-allowed disabled:opacity-50"
@@ -415,6 +416,7 @@ export default function BrandsContact() {
               <div className="sm:col-span-2">
                 <button
                   type="button"
+                  suppressHydrationWarning
                   onClick={addItem}
                   disabled={status === "sending"}
                   className="min-h-12 w-full border border-hairline bg-bg px-8 py-3 text-sm font-bold uppercase tracking-wide text-muted-2 transition-colors hover:border-gold-deep/50 hover:text-gold-deep disabled:cursor-not-allowed disabled:opacity-60"
@@ -439,9 +441,9 @@ export default function BrandsContact() {
                 )}
                 <button
                   type="submit"
+                  suppressHydrationWarning
                   disabled={status === "sending"}
                   className="min-h-12 bg-gold px-8 py-3 text-sm font-bold uppercase tracking-wide text-ink transition-colors hover:bg-accent hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-deep disabled:cursor-not-allowed disabled:opacity-60"
-                    suppressHydrationWarning
                 >
                   {status === "sending" ? "Sending..." : "GET A QUOTE"}
                 </button>
@@ -479,6 +481,7 @@ export default function BrandsContact() {
             </p>
             <button
               type="button"
+              suppressHydrationWarning
               onClick={() => setStatus("idle")}
               className="mt-8 min-h-12 bg-gold px-8 py-3 text-sm font-bold uppercase tracking-wide text-ink transition-colors hover:bg-accent hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-deep"
             >

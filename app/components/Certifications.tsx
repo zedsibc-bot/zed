@@ -78,6 +78,7 @@ export default function Certifications() {
             <button
               key={`${item.title}-${item.code}`}
               type="button"
+              suppressHydrationWarning
               onClick={(event) => {
                 returnFocusRef.current = event.currentTarget;
                 setActivePage(0);
@@ -136,6 +137,7 @@ export default function Certifications() {
               <button
                 ref={closeButtonRef}
                 type="button"
+                suppressHydrationWarning
                 onClick={closeViewer}
                 className="min-h-11 shrink-0 border border-hairline px-4 text-sm font-bold uppercase tracking-wide text-ink transition-colors hover:border-gold-deep hover:text-gold-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-deep"
               >
@@ -158,6 +160,7 @@ export default function Certifications() {
               <div className="mt-5 flex items-center justify-between gap-4">
                 <button
                   type="button"
+                  suppressHydrationWarning
                   onClick={() => showPage(-1)}
                   className="min-h-11 border border-hairline px-4 text-sm font-bold uppercase tracking-wide text-ink transition-colors hover:border-gold-deep hover:text-gold-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-deep"
                 >
@@ -168,6 +171,7 @@ export default function Certifications() {
                 </p>
                 <button
                   type="button"
+                  suppressHydrationWarning
                   onClick={() => showPage(1)}
                   className="min-h-11 border border-hairline px-4 text-sm font-bold uppercase tracking-wide text-ink transition-colors hover:border-gold-deep hover:text-gold-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-deep"
                 >
