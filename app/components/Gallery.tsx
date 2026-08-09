@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { gallery } from "@/app/data";
+import Certifications from "./Certifications";
 
 export default function Gallery() {
   return (
@@ -28,11 +29,12 @@ export default function Gallery() {
                 fill
                 sizes="(min-width: 768px) 33vw, 50vw"
                 quality={85}
-                className="object-cover transition-transform duration-300 hover:scale-105"
+                className="object-cover transition-transform duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] hover:scale-105"
               />
             </figure>
           ))}
         </div>
+        <Certifications />
       </div>
     </section>
   );

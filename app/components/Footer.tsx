@@ -7,7 +7,7 @@ const companyLinks = [
   { label: "Our Services", href: "#services" },
   { label: "Products", href: "#products" },
   { label: "Gallery", href: "#gallery" },
-  { label: "Certifications", href: "#gallery" },
+  { label: "Certifications", href: "#certifications" },
 ];
 
 const supportLinks = [
@@ -20,7 +20,7 @@ const supportLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-bg">
+    <footer className="bg-bg text-ink">
       <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 md:grid-cols-3">
         <div>
           <a
@@ -48,14 +48,21 @@ export default function Footer() {
           <div className="mt-6 space-y-2">
             <a
               href={`tel:${company.phoneTel}`}
-              className="flex items-center gap-2.5 text-sm text-muted-2 transition-colors hover:text-gold-deep"
+              className="flex items-center gap-2.5 text-sm text-muted-2 transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] hover:text-gold-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-deep"
             >
               <PhoneIcon className="h-4 w-4 text-gold-deep" />
               {company.phoneIntl}
             </a>
             <a
+              href={`tel:${company.secondaryPhoneTel}`}
+              className="flex items-center gap-2.5 text-sm text-muted-2 transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] hover:text-gold-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-deep"
+            >
+              <PhoneIcon className="h-4 w-4 text-gold-deep" />
+              {company.secondaryPhoneIntl}
+            </a>
+            <a
               href={`mailto:${company.email}`}
-              className="flex items-center gap-2.5 text-sm text-muted-2 transition-colors hover:text-gold-deep"
+              className="flex items-center gap-2.5 text-sm text-muted-2 transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] hover:text-gold-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-deep"
             >
               <MailIcon className="h-4 w-4 text-gold-deep" />
               {company.email}
@@ -72,7 +79,7 @@ export default function Footer() {
               <li key={l.label}>
                 <a
                   href={l.href}
-                  className="text-sm capitalize text-muted-2 transition-colors hover:text-gold-deep"
+                  className="text-sm capitalize text-muted-2 transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] hover:text-gold-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-deep"
                 >
                   {l.label}
                 </a>
@@ -90,7 +97,7 @@ export default function Footer() {
               <li key={l.label}>
                 <a
                   href={l.href}
-                  className="text-sm capitalize text-muted-2 transition-colors hover:text-gold-deep"
+                  className="text-sm capitalize text-muted-2 transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] hover:text-gold-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-deep"
                 >
                   {l.label}
                 </a>
@@ -100,7 +107,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="hairline-top">
+      <div className="border-t border-hairline">
         <p className="mx-auto max-w-7xl px-6 py-6 text-center text-xs text-muted-faint">
           © 2026 Zed&apos;s Industrial Builders Corporation. All rights reserved.
         </p>

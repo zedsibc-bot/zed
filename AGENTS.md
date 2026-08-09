@@ -9,7 +9,12 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 <!-- END:nextjs-agent-rules -->
 
 ## File boundaries
+
 - The project root is the directory containing this AGENTS.md file.
 - NEVER create or write files outside this project root.
 - Temporary/scratch work goes only in `D:\Temp\opencode` (never `%TEMP%` or C: drive).
 - If a build/tool wants to write elsewhere (logs, caches), keep it inside the project or ask the user first.
+
+## Design standards
+
+- UI work must follow the brand specification in `DESIGN.md` (project-specific style). Where `DESIGN.md` is silent, fall back to `UNSLOP.md` (typography scale, 60-30-10 color budget, no gradients/bento/emoji/cards, button states, transition stack). Read both before designing or building UI.

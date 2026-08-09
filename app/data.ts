@@ -6,6 +6,9 @@ export const company = {
   phoneDisplay: "0935 039 6218",
   phoneIntl: "+63 935 039 6218",
   phoneTel: "+639350396218",
+  secondaryPhoneDisplay: "0908 815 3179",
+  secondaryPhoneIntl: "+63 908 815 3179",
+  secondaryPhoneTel: "+639088153179",
   email: "zedsdepot@gmail.com",
   address:
     "111-A Tandang Sora Ave. Cor. Roque Drive Extension, Quezon City, Philippines",
@@ -31,6 +34,46 @@ export const heroFeatures = [
     desc: "Electrodes, consumables, pipe fittings and fabrication.",
   },
 ];
+
+export const growthTimeline = [
+  {
+    number: "01",
+    year: "Origins",
+    title: "Zed's Depot",
+    desc: "First known as Zed's Depot, a trusted provider of quality hardware, power tools, and industrial equipment.",
+  },
+  {
+    number: "02",
+    year: "2020",
+    title: "Online Store",
+    desc: "Started as an online store, making reliable and affordable tools available to customers nationwide.",
+  },
+  {
+    number: "03",
+    year: "2021",
+    title: "Physical Growth",
+    desc: "Transitioned from fully online operations to its first physical store, marking a major step forward.",
+  },
+  {
+    number: "04",
+    year: "Expansion",
+    title: "Zed's Tools Depot",
+    desc: "Evolved into a wider hardware and equipment trading business with a complete in-store experience.",
+  },
+  {
+    number: "05",
+    year: "2025",
+    title: "Builders Corporation",
+    desc: "Expanded its construction-services presence as Zed's Industrial Builders Corporation.",
+  },
+];
+
+export const aboutImages = [
+  { src: "/assets/img/pg-15-01.webp", alt: "Zed's Industrial Builders Corporation storefront" },
+  { src: "/assets/img/pg-16-03.webp", alt: "Inside Zed's Industrial Builders Corporation store" },
+];
+
+export const clientsImage = "/assets/img/pg-15-02.webp";
 
 export const services = [
   {
@@ -315,20 +358,92 @@ export const org = [
   },
 ];
 
-export const certifications = [
-  { title: "Certificate of Registration", code: "COR 2303-2021" },
-  { title: "Certificate of Registration", code: "COR 2303-2024" },
-  { title: "Certificate of Registration", code: "COR 2303-2025" },
-  { title: "Business Permit", code: "2021" },
-  { title: "Business Permit", code: "2022" },
-  { title: "Business Permit", code: "2023" },
-  { title: "Mayor's Permit", code: "2021" },
-  { title: "Mayor's Permit", code: "2024" },
-  { title: "Mayor's Permit", code: "2025" },
-  { title: "PhilGEPS Registered", code: "RED #407234" },
-  { title: "DTI Registered", code: "2021" },
-  { title: "Sales Invoice", code: "Registered" },
-  { title: "SEC Registered", code: "Registered" },
+export type Certification = {
+  title: string;
+  code: string;
+  pages: Array<{ src: string; alt: string }>;
+};
+
+export const certifications: Certification[] = [
+  {
+    title: "Certificate of Registration",
+    code: "COR 2303-2021",
+    pages: [
+      { src: "/assets/permits/cor-2303-2021-1.png", alt: "Certificate of Registration COR 2303-2021, page 1" },
+      { src: "/assets/permits/cor-2303-2021-2.png", alt: "Certificate of Registration COR 2303-2021, page 2" },
+      { src: "/assets/permits/cor-2303-2021-3.png", alt: "Certificate of Registration COR 2303-2021, page 3" },
+    ],
+  },
+  {
+    title: "Certificate of Registration",
+    code: "COR 2303-2024",
+    pages: [
+      { src: "/assets/permits/cor-2303-2024-1.png", alt: "Certificate of Registration COR 2303-2024, page 1" },
+      { src: "/assets/permits/cor-2303-2024-2.png", alt: "Certificate of Registration COR 2303-2024, page 2" },
+      { src: "/assets/permits/cor-2303-2024-3.png", alt: "Certificate of Registration COR 2303-2024, page 3" },
+    ],
+  },
+  {
+    title: "Certificate of Registration",
+    code: "COR 2303-2025",
+    pages: [
+      { src: "/assets/permits/cor-2303-2025-1.png", alt: "Certificate of Registration COR 2303-2025, page 1" },
+      { src: "/assets/permits/cor-2303-2025-2.png", alt: "Certificate of Registration COR 2303-2025, page 2" },
+    ],
+  },
+  {
+    title: "Business Permit",
+    code: "2021",
+    pages: [{ src: "/assets/permits/business-permit-2021.png", alt: "Business Permit 2021" }],
+  },
+  {
+    title: "Business Permit",
+    code: "2022",
+    pages: [{ src: "/assets/permits/business-permit-2022.png", alt: "Business Permit 2022" }],
+  },
+  {
+    title: "Business Permit",
+    code: "2023",
+    pages: [{ src: "/assets/permits/business-permit-2023.jpeg", alt: "Business Permit 2023" }],
+  },
+  {
+    title: "Mayor's Permit",
+    code: "2021",
+    pages: [{ src: "/assets/permits/mayors-permit-2021.png", alt: "Mayor's Permit 2021" }],
+  },
+  {
+    title: "Mayor's Permit",
+    code: "2024",
+    pages: [{ src: "/assets/permits/mayors-permit-2024.png", alt: "Mayor's Permit 2024" }],
+  },
+  {
+    title: "Mayor's Permit",
+    code: "2025",
+    pages: [{ src: "/assets/permits/mayors-permit-2025.png", alt: "Mayor's Permit 2025" }],
+  },
+  {
+    title: "PhilGEPS Registered",
+    code: "RED #407234",
+    pages: [{ src: "/assets/permits/philgeps-red-407234.png", alt: "PhilGEPS RED registration number 407234" }],
+  },
+  {
+    title: "DTI Registered",
+    code: "2021",
+    pages: [{ src: "/assets/permits/dti-registration-2021.png", alt: "DTI Certificate of Business Name Registration 2021" }],
+  },
+  {
+    title: "Sales Invoice",
+    code: "Registered",
+    pages: [{ src: "/assets/permits/sales-invoice.png", alt: "Registered sales invoice" }],
+  },
+  {
+    title: "SEC Registered",
+    code: "Registered",
+    pages: [
+      { src: "/assets/permits/sec-registration-1.png", alt: "SEC registration document, page 1" },
+      { src: "/assets/permits/sec-registration-2.png", alt: "SEC Certificate of Incorporation, page 2" },
+    ],
+  },
 ];
 
 export const gallery = [

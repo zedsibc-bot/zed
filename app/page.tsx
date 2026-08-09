@@ -9,6 +9,7 @@ import CtaBanner from "./components/CtaBanner";
 import Gallery from "./components/Gallery";
 import BrandsContact from "./components/BrandsContact";
 import Footer from "./components/Footer";
+import FloatingContactButtons from "./components/FloatingContactButtons";
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
         <BrandsContact />
       </main>
       <Footer />
+      <FloatingContactButtons />
     </>
   );
 }

@@ -15,18 +15,15 @@ export default function Services() {
 
         <div className="mt-14 grid gap-px bg-hairline sm:grid-cols-2 lg:grid-cols-4">
           {services.map((s, i) => (
-            <div
-              key={s.title}
-              className="group flex flex-col bg-bg p-7"
-            >
+            <article key={s.title} className="flex min-h-64 flex-col bg-bg p-7">
               <span className="font-heading text-xs font-bold text-muted-faint">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <h3 className="mt-6 font-heading text-base font-bold uppercase tracking-wide text-gold-deep">
+              <h3 className="mt-6 font-heading text-base font-bold uppercase tracking-wide text-ink">
                 {s.title}
               </h3>
               <p className="mt-3 text-sm leading-6 text-muted-2">{s.desc}</p>
-            </div>
+            </article>
           ))}
         </div>
       </div>

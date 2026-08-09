@@ -1,7 +1,8 @@
 "use client";
 
 import { FormEvent, useEffect, useState } from "react";
-import { brands, company } from "@/app/data";
+import Image from "next/image";
+import { company } from "@/app/data";
 import { CheckIcon, MailIcon, PhoneIcon, PinIcon } from "./icons";
 
 const units = [
@@ -110,24 +111,25 @@ export default function BrandsContact() {
     <>
       <section id="contact" className="bg-bg-darker py-24">
       <div className="mx-auto max-w-7xl px-6">
-        <span className="label-kicker">07 / Brands &amp; Contact</span>
+        <span className="label-kicker">08 / Brands &amp; Contact</span>
         <h2 className="mt-4 font-heading text-3xl font-bold text-ink sm:text-4xl">
           Brands We Supply
         </h2>
-        <p className="mt-4 max-w-xl text-sm leading-7 text-muted-2">
-          Import and authorized supplier of process instrumentation and
-          industrial equipment.
+        <p className="mt-4 max-w-2xl text-sm leading-7 text-muted-2">
+          A selection of the trusted brands we supply for construction,
+          industrial, electrical, automotive, and hardware needs.
         </p>
 
-        <div className="mt-10 flex flex-wrap items-center gap-2.5">
-          {brands.map((b) => (
-            <span
-              key={b}
-              className="border border-hairline bg-bg px-5 py-3 font-heading text-sm font-semibold uppercase tracking-widest text-muted-2 transition-colors hover:border-gold-deep/50 hover:text-gold-deep"
-            >
-              {b}
-            </span>
-          ))}
+        <div className="mx-auto mt-10 max-w-3xl overflow-hidden border border-hairline bg-bg">
+          <Image
+            src="/brands/brands.jpg"
+            alt="Zed's retail and wholesale brand catalogue featuring construction, industrial, electrical, automotive, and hardware suppliers"
+            width={1064}
+            height={1327}
+            sizes="(min-width: 1280px) 1064px, (min-width: 768px) calc(100vw - 96px), calc(100vw - 48px)"
+            quality={85}
+            className="h-auto w-full"
+          />
         </div>
 
         <div className="mt-24 grid gap-12 lg:grid-cols-2">
@@ -139,7 +141,7 @@ export default function BrandsContact() {
 
             <div className="mt-10 space-y-6">
               <div className="flex items-start gap-4">
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center bg-gold text-ink">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center border border-hairline bg-bg-dark text-gold-deep">
                   <PinIcon className="h-5 w-5" />
                 </span>
                 <div>
@@ -150,7 +152,7 @@ export default function BrandsContact() {
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center bg-gold text-ink">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center border border-hairline bg-bg-dark text-gold-deep">
                   <MailIcon className="h-5 w-5" />
                 </span>
                 <div>
@@ -164,7 +166,7 @@ export default function BrandsContact() {
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center bg-gold text-ink">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center border border-hairline bg-bg-dark text-gold-deep">
                   <PhoneIcon className="h-5 w-5" />
                 </span>
                 <div>
@@ -174,6 +176,12 @@ export default function BrandsContact() {
                     className="mt-1 inline-block text-sm leading-6 text-muted-2 underline-offset-4 hover:text-gold-deep hover:underline"
                   >
                     {company.phoneIntl}
+                  </a>
+                  <a
+                    href={`tel:${company.secondaryPhoneTel}`}
+                    className="mt-1 block text-sm leading-6 text-muted-2 underline-offset-4 hover:text-gold-deep hover:underline"
+                  >
+                    {company.secondaryPhoneIntl}
                   </a>
                 </div>
               </div>
@@ -456,7 +464,7 @@ export default function BrandsContact() {
             onClick={(e) => e.stopPropagation()}
             className="w-full max-w-md border border-hairline bg-bg p-8 text-center sm:p-10"
           >
-            <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-gold">
+            <span className="mx-auto flex h-16 w-16 items-center justify-center bg-gold">
               <CheckIcon className="h-8 w-8 text-ink" />
             </span>
             <h3

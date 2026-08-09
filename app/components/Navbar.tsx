@@ -16,6 +16,7 @@ const links = [
   { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
   { label: "Products", href: "#products" },
+  { label: "Permits", href: "#certifications" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -104,6 +105,13 @@ export default function Navbar() {
             >
               <PhoneIcon className="h-3.5 w-3.5" />
               {company.phoneDisplay}
+            </a>
+            <a
+              href={`tel:${company.secondaryPhoneTel}`}
+              className="hidden items-center gap-1.5 transition-opacity hover:opacity-80 lg:flex"
+            >
+              <PhoneIcon className="h-3.5 w-3.5" />
+              {company.secondaryPhoneDisplay}
             </a>
             <a
               href={`mailto:${company.email}`}

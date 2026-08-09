@@ -13,6 +13,7 @@ export default function WhyChooseUs() {
                 alt="Zed's Industrial Builders Corporation, Quezon City"
                 width={1296}
                 height={864}
+                sizes="(min-width: 1024px) 50vw, 100vw"
                 quality={85}
                 className="relative w-full"
               />

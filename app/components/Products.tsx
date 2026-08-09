@@ -15,11 +15,8 @@ export default function Products() {
 
         <div className="mt-14 grid gap-px bg-hairline sm:grid-cols-2 lg:grid-cols-4">
           {productLines.map((p) => (
-            <div
-              key={p.title}
-              className="bg-bg p-7"
-            >
-              <h3 className="font-heading text-lg font-bold uppercase tracking-wide text-gold-deep">
+            <article key={p.title} className="bg-bg p-7">
+              <h3 className="font-heading text-lg font-bold uppercase tracking-wide text-ink">
                 {p.title}
               </h3>
               <ul className="mt-5 space-y-3">
@@ -35,7 +32,7 @@ export default function Products() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </article>
           ))}
         </div>
       </div>
