@@ -8,7 +8,6 @@ import {
   MailIcon,
   MenuIcon,
   PhoneIcon,
-  PinIcon,
 } from "./icons";
 
 const links = [
@@ -120,10 +119,6 @@ export default function Navbar() {
               <MailIcon className="h-3.5 w-3.5" />
               {company.email}
             </a>
-            <span className="hidden items-center gap-1.5 lg:flex">
-              <PinIcon className="h-3.5 w-3.5" />
-              Tandang Sora Ave., Quezon City
-            </span>
           </div>
           <p className="hidden tracking-wider uppercase sm:block">
             Hardware Tools &amp; Equipment Trading

@@ -11,8 +11,7 @@ export default function Gallery() {
           Store Gallery
         </h2>
         <p className="mt-4 max-w-xl text-sm leading-7 text-muted-2">
-          A look inside our physical store at Tandang Sora Avenue, Quezon
-          City.
+          A look inside our physical store.
         </p>
 
         <div className="mt-14 grid auto-rows-[220px] grid-cols-2 gap-4 md:grid-cols-3">

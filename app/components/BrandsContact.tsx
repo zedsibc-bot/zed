@@ -145,9 +145,16 @@ export default function BrandsContact() {
                   <PinIcon className="h-5 w-5" />
                 </span>
                 <div>
-                  <p className="text-sm font-semibold text-ink">Address</p>
+                  <p className="text-sm font-semibold text-ink">A New Home for Our Business</p>
                   <p className="mt-1 text-sm leading-6 text-muted-2">
-                    {company.address}
+                    We are excited to announce that we are moving to a new,
+                    privately owned location. This new space will provide us
+                    with a more stable and permanent home as we continue to
+                    grow and serve our valued clients.
+                  </p>
+                  <p className="mt-3 text-sm leading-6 text-muted-2">
+                    The space is currently being prepared, and we will share
+                    further updates regarding our official opening soon.
                   </p>
                 </div>
               </div>
@@ -187,15 +194,6 @@ export default function BrandsContact() {
               </div>
             </div>
 
-            <div className="mt-10 border border-hairline bg-bg p-6">
-              <p className="font-heading text-xs font-bold uppercase tracking-[0.2em] text-gold-deep">
-                Visit Our Store
-              </p>
-              <p className="mt-3 text-sm leading-6 text-muted-2">
-                111-A Tandang Sora Ave. corner Roque Drive Extension, Quezon
-                City, Philippines.
-              </p>
-            </div>
           </div>
 
           <div className="border border-hairline bg-bg p-6 sm:p-8">

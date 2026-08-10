@@ -432,6 +432,11 @@ export const certifications: Certification[] = [
     pages: [{ src: "/assets/permits/dti-registration-2021.png", alt: "DTI Certificate of Business Name Registration 2021" }],
   },
   {
+    title: "DTI Registered",
+    code: "2026 · BN 2376964",
+    pages: [{ src: "/dti/Screenshot 2026-08-10 232645.png", alt: "DTI Certificate of Business Name Registration, Business Name No. 2376964, issued January 4, 2026" }],
+  },
+  {
     title: "Sales Invoice",
     code: "Registered",
     pages: [{ src: "/assets/permits/sales-invoice.png", alt: "Registered sales invoice" }],
