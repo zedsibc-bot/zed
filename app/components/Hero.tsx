@@ -9,14 +9,15 @@ export default function Hero() {
           src="/assets/img/pg-16-01.webp"
           alt=""
           fill
-          preload
+          loading="eager"
+          fetchPriority="high"
           sizes="100vw"
           quality={85}
           className="object-cover object-right"
         />
         <div className="relative z-10 mx-auto flex h-[calc(100dvh-6rem)] w-full max-w-7xl items-center px-6">
           <div className="max-w-[580px] bg-bg p-5 sm:p-6 lg:max-w-[540px] lg:p-8">
-            <span className="label-kicker">Est. 2020 · Quezon City</span>
+            <span className="label-kicker">Est. 2020 · Caloocan City</span>
             <h1 className="mt-3 font-heading text-2xl font-extrabold uppercase leading-[1.05] text-ink sm:text-3xl lg:text-4xl">
               Zed&apos;s Industrial Builders Corporation
               <span className="mt-2 block text-[0.65rem] font-bold uppercase tracking-[0.1em] text-accent-2 sm:text-xs">

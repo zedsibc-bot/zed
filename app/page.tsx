@@ -3,7 +3,6 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Services from "./components/Services";
 import Products from "./components/Products";
-import WhyChooseUs from "./components/WhyChooseUs";
 import CtaBanner from "./components/CtaBanner";
 import Gallery from "./components/Gallery";
 import BrandsContact from "./components/BrandsContact";
@@ -19,7 +18,6 @@ export default function Home() {
         <About />
         <Services />
         <Products />
-        <WhyChooseUs />
         <CtaBanner />
         <Gallery />
         <BrandsContact />

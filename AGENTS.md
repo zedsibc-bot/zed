@@ -11,9 +11,9 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 ## File boundaries
 
 - The project root is the directory containing this AGENTS.md file.
-- NEVER create or write files outside this project root.
-- Temporary/scratch work goes only in `D:\Temp\opencode` (never `%TEMP%` or C: drive).
-- If a build/tool wants to write elsewhere (logs, caches), keep it inside the project or ask the user first.
+- Do not create, modify, or delete files outside the project root, except in `D:\Temp\agent-scratch`.
+- Use `D:\Temp\agent-scratch` for all temporary/scratch files; never use `%TEMP%`, `%TMP%`, or any location on `C:`.
+- If a build or tool requires logs, caches, temp files, or outputs outside these locations, configure it to use the project root or `D:\Temp\agent-scratch`; otherwise ask the user first.
 
 ## Design standards
 

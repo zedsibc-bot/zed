@@ -65,9 +65,10 @@ export default function Certifications() {
 
   return (
     <div id="certifications" className="mt-24 border-t border-hairline pt-24">
-        <span className="label-kicker">07 / Registration &amp; Permits</span>
+      <div className="mx-auto max-w-7xl px-6">
+        <span className="label-kicker">07 / Registration</span>
         <h2 className="mt-4 font-heading text-3xl font-bold text-ink sm:text-4xl">
-          Registration &amp; Permits
+          Registration
         </h2>
         <p className="mt-4 max-w-2xl text-sm leading-7 text-muted-2">
           View Zed&apos;s business registrations, permits, and supplier credentials.
@@ -112,6 +113,7 @@ export default function Certifications() {
             </button>
           ))}
         </div>
+      </div>
       {certification && (
         <div
           role="dialog"
@@ -128,7 +130,7 @@ export default function Certifications() {
             <div className="flex items-start justify-between gap-4">
               <div>
                 <p className="font-heading text-xs font-bold uppercase tracking-[0.2em] text-gold-deep">
-                  Registration &amp; Permits
+                  Registration
                 </p>
                 <h3 id="certification-viewer-title" className="mt-2 font-heading text-xl font-bold text-ink sm:text-2xl">
                   {certification.title} · {certification.code}

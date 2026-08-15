@@ -1,20 +1,18 @@
 import Image from "next/image";
 import { company } from "@/app/data";
-import { MailIcon, PhoneIcon } from "./icons";
+import { MailIcon, PhoneIcon, PinIcon } from "./icons";
 
 const companyLinks = [
   { label: "About Us", href: "#about" },
   { label: "Our Services", href: "#services" },
   { label: "Products", href: "#products" },
-  { label: "Gallery", href: "#gallery" },
   { label: "Certifications", href: "#certifications" },
 ];
 
 const supportLinks = [
   { label: "Contact", href: "#contact" },
   { label: "Get A Quote", href: "#contact" },
-  { label: "Brands", href: "#contact" },
-  { label: "Why Choose Us", href: "#why-us" },
+{ label: "Brands", href: "#contact" },
 ];
 
 export default function Footer() {
@@ -63,9 +61,13 @@ export default function Footer() {
               href={`mailto:${company.email}`}
               className="flex items-center gap-2.5 text-sm text-muted-2 transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] hover:text-gold-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-deep"
             >
-              <MailIcon className="h-4 w-4 text-gold-deep" />
+<MailIcon className="h-4 w-4 text-gold-deep" />
               {company.email}
             </a>
+            <p className="flex items-start gap-2.5 text-sm leading-6 text-muted-2">
+              <PinIcon className="mt-0.5 h-4 w-4 shrink-0 text-gold-deep" />
+              <span>{company.address}</span>
+            </p>
           </div>
         </div>
 

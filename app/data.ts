@@ -11,7 +11,7 @@ export const company = {
   secondaryPhoneTel: "+639088153179",
   email: "zedsdepot@gmail.com",
   address:
-    "111-A Tandang Sora Ave. Cor. Roque Drive Extension, Quezon City, Philippines",
+    "Lot 31 Block 29 Congressional, Model Subdivision Barangay 178, Caloocan City, Third District, National Capital Region (NCR), 1400",
   established: "August 2020",
   physicalStore: "April 25, 2021",
 };
@@ -123,25 +123,6 @@ export const services = [
   {
     title: "Permits & Bonds",
     desc: "Building permit, sign and seal, consultancy, project management, project cost estimate, modular cabinet, CARI / CGLI insurance, surety and performance bonds.",
-  },
-];
-
-export const whyChoose = [
-  {
-    title: "Authorized Supplier",
-    desc: "Import and authorized supplier of process instrumentation and industrial equipment.",
-  },
-  {
-    title: "Quality Brands",
-    desc: "Emerson, Siemens, Cameron, Leakwise, Precision Digital and more.",
-  },
-  {
-    title: "Money's Worth",
-    desc: "High-standard construction and industrial supplies that guarantee your money's worth.",
-  },
-  {
-    title: "Fast Service",
-    desc: "From online store to full hardware trading, serving customers nationwide.",
   },
 ];
 
@@ -366,82 +347,6 @@ export type Certification = {
 
 export const certifications: Certification[] = [
   {
-    title: "Certificate of Registration",
-    code: "COR 2303-2021",
-    pages: [
-      { src: "/assets/permits/cor-2303-2021-1.png", alt: "Certificate of Registration COR 2303-2021, page 1" },
-      { src: "/assets/permits/cor-2303-2021-2.png", alt: "Certificate of Registration COR 2303-2021, page 2" },
-      { src: "/assets/permits/cor-2303-2021-3.png", alt: "Certificate of Registration COR 2303-2021, page 3" },
-    ],
-  },
-  {
-    title: "Certificate of Registration",
-    code: "COR 2303-2024",
-    pages: [
-      { src: "/assets/permits/cor-2303-2024-1.png", alt: "Certificate of Registration COR 2303-2024, page 1" },
-      { src: "/assets/permits/cor-2303-2024-2.png", alt: "Certificate of Registration COR 2303-2024, page 2" },
-      { src: "/assets/permits/cor-2303-2024-3.png", alt: "Certificate of Registration COR 2303-2024, page 3" },
-    ],
-  },
-  {
-    title: "Certificate of Registration",
-    code: "COR 2303-2025",
-    pages: [
-      { src: "/assets/permits/cor-2303-2025-1.png", alt: "Certificate of Registration COR 2303-2025, page 1" },
-      { src: "/assets/permits/cor-2303-2025-2.png", alt: "Certificate of Registration COR 2303-2025, page 2" },
-    ],
-  },
-  {
-    title: "Business Permit",
-    code: "2021",
-    pages: [{ src: "/assets/permits/business-permit-2021.png", alt: "Business Permit 2021" }],
-  },
-  {
-    title: "Business Permit",
-    code: "2022",
-    pages: [{ src: "/assets/permits/business-permit-2022.png", alt: "Business Permit 2022" }],
-  },
-  {
-    title: "Business Permit",
-    code: "2023",
-    pages: [{ src: "/assets/permits/business-permit-2023.jpeg", alt: "Business Permit 2023" }],
-  },
-  {
-    title: "Mayor's Permit",
-    code: "2021",
-    pages: [{ src: "/assets/permits/mayors-permit-2021.png", alt: "Mayor's Permit 2021" }],
-  },
-  {
-    title: "Mayor's Permit",
-    code: "2024",
-    pages: [{ src: "/assets/permits/mayors-permit-2024.png", alt: "Mayor's Permit 2024" }],
-  },
-  {
-    title: "Mayor's Permit",
-    code: "2025",
-    pages: [{ src: "/assets/permits/mayors-permit-2025.png", alt: "Mayor's Permit 2025" }],
-  },
-  {
-    title: "PhilGEPS Registered",
-    code: "RED #407234",
-    pages: [{ src: "/assets/permits/philgeps-red-407234.png", alt: "PhilGEPS RED registration number 407234" }],
-  },
-  {
-    title: "DTI Registered",
-    code: "2021",
-    pages: [{ src: "/assets/permits/dti-registration-2021.png", alt: "DTI Certificate of Business Name Registration 2021" }],
-  },
-  {
-    title: "DTI Registered",
-    code: "2026 · BN 2376964",
-    pages: [{ src: "/dti/Screenshot 2026-08-10 232645.png", alt: "DTI Certificate of Business Name Registration, Business Name No. 2376964, issued January 4, 2026" }],
-  },
-  {
-    title: "Sales Invoice",
-    code: "Registered",
-    pages: [{ src: "/assets/permits/sales-invoice.png", alt: "Registered sales invoice" }],
-  },
-  {
     title: "SEC Registered",
     code: "Registered",
     pages: [
@@ -450,14 +355,3 @@ export const certifications: Certification[] = [
     ],
   },
 ];
-
-export const gallery = [
-  { src: "/assets/img/pg-15-01.webp", alt: "Zed's Industrial Builders Corporation physical store", big: false },
-  { src: "/assets/img/pg-15-02.webp", alt: "Hardware store front display", big: true },
-  { src: "/assets/img/pg-15-03.webp", alt: "Store tools display", big: false },
-  { src: "/assets/img/pg-16-01.webp", alt: "Inside the store, shelves", big: false },
-  { src: "/assets/img/pg-16-02.webp", alt: "Inside the store, aisle", big: false },
-  { src: "/assets/img/pg-16-03.webp", alt: "Store interior, hardware", big: true },
-];
-
-export const whyImage = "/assets/img/pg-16-02.webp";

@@ -19,14 +19,14 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl()),
   title: "Zed's Industrial Builders Corporation | Hardware Tools & Equipment Trading",
   description:
-    "Zed's Industrial Builders Corporation is a hardware tools and equipment trading company in Quezon City, Philippines. Authorized importer and supplier of construction and industrial supplies since 2020.",
+    "Zed's Industrial Builders Corporation is a hardware tools and equipment trading company in Caloocan City, Philippines. Authorized importer and supplier of construction and industrial supplies since 2020.",
   keywords: [
     "hardware",
     "tools",
     "equipment",
     "construction",
     "industrial",
-    "Quezon City",
+    "Caloocan City",
     "Philippines",
     "welding",
     "electrical supplies",
