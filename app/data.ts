@@ -350,7 +350,7 @@ export const certifications: Certification[] = [
     title: "SEC Registered",
     code: "Registered",
     pages: [
-      { src: "/assets/permits/sec-registration-1.png", alt: "SEC registration document, page 1" },
+      { src: "/assets/permits/sec-registration-1-blurred.png", alt: "SEC registration document, page 1" },
       { src: "/assets/permits/sec-registration-2.png", alt: "SEC Certificate of Incorporation, page 2" },
     ],
   },
