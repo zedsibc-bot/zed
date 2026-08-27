@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { company, heroFeatures } from "@/app/data";
+import { PhoneIcon } from "./icons";
 
 export default function Hero() {
   return (
@@ -38,6 +39,24 @@ export default function Hero() {
               </a>
               <a href={`mailto:${company.email}`} className="flex min-h-11 items-center justify-center border-2 border-ink/15 px-6 py-2.5 text-xs font-bold uppercase tracking-wide text-ink hover:border-gold-deep hover:text-gold-deep">
                 GET A QUOTE
+              </a>
+            </div>
+            <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-semibold text-ink sm:text-sm">
+              <span className="flex items-center gap-2 text-muted-2">
+                <PhoneIcon className="h-4 w-4 text-gold-deep" aria-hidden="true" />
+                Call us:
+              </span>
+              <a
+                href={`tel:${company.phoneTel}`}
+                className="underline-offset-4 hover:text-gold-deep hover:underline"
+              >
+                {company.phoneIntl}
+              </a>
+              <a
+                href={`tel:${company.secondaryPhoneTel}`}
+                className="underline-offset-4 hover:text-gold-deep hover:underline"
+              >
+                {company.secondaryPhoneIntl}
               </a>
             </div>
           </div>
