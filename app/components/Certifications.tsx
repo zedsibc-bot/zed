@@ -66,7 +66,62 @@ export default function Certifications() {
   return (
     <div id="certifications" className="mt-24 border-t border-hairline pt-24">
       <div className="mx-auto max-w-7xl px-6">
-        <span className="label-kicker">07 / Registration</span>
+        <section
+          aria-labelledby="zedsblocks-title"
+          className="grid overflow-hidden border border-hairline bg-bg lg:grid-cols-5"
+        >
+          <div className="relative aspect-square bg-bg-darker lg:col-span-2 lg:aspect-auto">
+            <Image
+              src="/assets/zedsblocks/interlocking-thermal-blocks.png"
+              alt="Zedsblocks interlocking thermal blocks"
+              fill
+              sizes="(min-width: 1024px) 40vw, 100vw"
+              quality={85}
+              className="object-contain"
+            />
+          </div>
+          <div className="border-t-4 border-gold p-7 sm:p-10 lg:col-span-3 lg:border-t-0 lg:border-l-4">
+            <span className="label-kicker">Zedsblocks / Product Feature</span>
+            <h2
+              id="zedsblocks-title"
+              className="mt-4 max-w-2xl font-heading text-3xl font-bold uppercase leading-tight text-ink sm:text-4xl"
+            >
+              Zedsblocks Interlocking Thermal Blocks
+            </h2>
+            <p className="mt-3 font-heading text-lg font-bold uppercase tracking-wide text-accent sm:text-xl">
+              Matibay. Matalino. Moderno.
+            </p>
+            <p className="mt-5 max-w-2xl text-sm leading-7 text-muted-2 sm:text-base">
+              Hindi lang basta blocks—Zedsblocks ang solid choice para sa mas maayos,
+              matibay, at komportableng construction!
+            </p>
+
+            <dl className="mt-8 grid border-y border-hairline sm:grid-cols-2">
+              {[
+                ["Interlocking Design", "mabilis at maayos i-install"],
+                ["Thermal Insulation", "tumutulong sa mas komportableng indoor temperature"],
+                ["Strong & Reliable", "para sa bahay, building, at iba’t ibang projects"],
+                ["Modern Construction Solution", "practical, efficient, at built for confidence"],
+              ].map(([term, description], index) => (
+                <div
+                  key={term}
+                  className={`p-5 ${index > 1 ? "border-t border-hairline" : ""} ${index % 2 === 1 ? "sm:border-l sm:border-hairline" : ""}`}
+                >
+                  <dt className="font-heading text-sm font-bold text-ink">{term}</dt>
+                  <dd className="mt-1 text-sm leading-6 text-muted-2">{description}</dd>
+                </div>
+              ))}
+            </dl>
+
+            <p className="mt-8 font-heading text-sm font-bold uppercase tracking-[0.12em] text-ink">
+              Zedsblocks — Lock in the strength. Build with confidence.
+            </p>
+          </div>
+        </section>
+
+        <div className="mt-20">
+          <span className="label-kicker">07 / Registration</span>
+        </div>
         <h2 className="mt-4 font-heading text-3xl font-bold text-ink sm:text-4xl">
           Registration
         </h2>
