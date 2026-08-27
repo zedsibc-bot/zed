@@ -64,8 +64,13 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Deploy to Cloudflare Workers
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This app uses the OpenNext Cloudflare adapter so the contact form's `/api/contact` route runs in a Worker.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Run `npm run preview` to test the production Worker locally.
+2. Run `npm run deploy` to deploy it. This keeps dashboard-managed variables intact.
+3. In Cloudflare, open the Worker and add `GOOGLE_SHEETS_WEBHOOK_URL` as an encrypted runtime secret under **Settings > Variables & Secrets**. Do not put it in `wrangler.jsonc`.
+4. To deploy automatically from GitHub, connect this repository to the Worker, select the `main` branch, set the build command to `npm run build:worker`, and set the deploy command to `npx wrangler deploy --keep-vars`.
+
+The Worker build checks every generated static asset and fails if one exceeds Cloudflare's 25 MiB per-asset limit.
