@@ -182,10 +182,10 @@ export default function Navbar() {
               {company.phoneDisplay}
             </a>
             <a
-              href="#contact"
+              href="#quotation"
               onClick={(e) => {
                 e.preventDefault();
-                goTo("#contact");
+                goTo("#quotation");
               }}
               className="hidden min-h-12 bg-gold px-6 py-3 text-sm font-bold uppercase tracking-wide text-ink transition-colors hover:bg-accent hover:text-white sm:inline-block"
             >
@@ -228,10 +228,10 @@ export default function Navbar() {
             </ul>
             <div className="mt-auto flex flex-col gap-3">
               <a
-                href="#contact"
+                href="#quotation"
                 onClick={(e) => {
                   e.preventDefault();
-                  goTo("#contact");
+                  goTo("#quotation");
                 }}
                 className="bg-gold px-6 py-4 text-center text-base font-bold uppercase tracking-wide text-ink"
               >

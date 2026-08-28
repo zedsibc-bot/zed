@@ -11,7 +11,7 @@ const companyLinks = [
 
 const supportLinks = [
   { label: "Contact", href: "#contact" },
-  { label: "Get A Quote", href: "#contact" },
+  { label: "Get A Quote", href: "#quotation" },
 { label: "Brands", href: "#contact" },
 ];
 

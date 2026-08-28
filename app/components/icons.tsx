@@ -1,5 +1,6 @@
 import {
   Check as CheckIcon,
+  FileDown as FileDownIcon,
   Gauge as PumpIcon,
   Mail as MailIcon,
   MapPin as PinIcon,
@@ -13,6 +14,7 @@ import {
 
 export {
   CheckIcon,
+  FileDownIcon,
   PumpIcon,
   MailIcon,
   PinIcon,

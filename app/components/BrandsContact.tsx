@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { company } from "@/app/data";
-import { MailIcon, PhoneIcon, PinIcon } from "./icons";
+import { FileDownIcon, MailIcon, PhoneIcon, PinIcon } from "./icons";
 
 export default function BrandsContact() {
   return (
@@ -90,6 +90,50 @@ export default function BrandsContact() {
             </div>
           </div>
         </div>
+
+        <section
+          id="quotation"
+          aria-labelledby="quotation-title"
+          className="mt-24 grid border border-hairline bg-bg lg:grid-cols-[1.35fr_0.65fr]"
+        >
+          <div className="border-t-4 border-gold p-7 sm:p-10 lg:border-t-0 lg:border-l-4">
+            <span className="label-kicker">Quotation Request</span>
+            <h3
+              id="quotation-title"
+              className="mt-4 font-heading text-3xl font-bold text-ink sm:text-4xl"
+            >
+              Send Us Your Requirements
+            </h3>
+            <p className="mt-4 max-w-2xl text-sm leading-7 text-muted-2">
+              Download the quotation request template, complete your contact
+              details and item requirements, then email the finished file to
+              us. We will review it and get back to you with a quotation.
+            </p>
+          </div>
+          <div className="flex flex-col justify-center border-t border-hairline bg-bg-darker p-7 sm:p-10 lg:border-t-0 lg:border-l">
+            <p className="font-heading text-xs font-bold uppercase tracking-[0.2em] text-gold-deep">
+              Excel Template
+            </p>
+            <p className="mt-3 text-sm leading-6 text-muted-2">
+              Includes fields for your company details and up to 20 requested
+              items.
+            </p>
+            <a
+              href="/downloads/zeds-quotation-request-template.xlsx"
+              download
+              className="mt-6 inline-flex min-h-12 items-center justify-center gap-2 bg-gold px-5 py-3 text-center text-sm font-bold uppercase tracking-wide text-ink transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] hover:bg-accent hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-deep"
+            >
+              <FileDownIcon className="h-4 w-4" aria-hidden="true" />
+              Download Template
+            </a>
+            <a
+              href={`mailto:${company.email}?subject=Quotation%20Request`}
+              className="mt-4 text-center text-sm font-semibold text-muted-2 underline-offset-4 hover:text-gold-deep hover:underline"
+            >
+              Email completed file to {company.email}
+            </a>
+          </div>
+        </section>
       </div>
     </section>
   );
