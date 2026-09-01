@@ -31,6 +31,9 @@ export const metadata: Metadata = {
     "welding",
     "electrical supplies",
   ],
+  verification: {
+    google: "Lld2b-LyQwDhW60B1yZ1cK8UShmL_Bml_RM9p0Do7N0",
+  },
   openGraph: {
     title: "Zed's Industrial Builders Corporation",
     description:
