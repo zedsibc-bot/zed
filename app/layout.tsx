@@ -34,6 +34,9 @@ export const metadata: Metadata = {
   verification: {
     google: "Lld2b-LyQwDhW60B1yZ1cK8UShmL_Bml_RM9p0Do7N0",
   },
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Zed's Industrial Builders Corporation",
     description:
