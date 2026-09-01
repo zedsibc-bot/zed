@@ -3,6 +3,6 @@ export function siteUrl(): string {
   return (
     process.env.NEXT_PUBLIC_SITE_URL ??
     (vercel ? `https://${vercel}` : undefined) ??
-    "http://localhost:3000"
+    "https://zedsbuilders.com"
   );
 }
